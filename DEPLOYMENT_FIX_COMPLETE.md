@@ -42,7 +42,7 @@ always
 ### 2️⃣ API 代码 TF32 优化
 
 #### 修改文件
-`/home/neo/upload/Step-Audio-EditX/api_server.py`
+`/your/project/path/api_server.py`
 
 #### 添加的代码
 ```python
@@ -66,7 +66,7 @@ def main():
 ### 3️⃣ API 容器启动脚本
 
 #### 脚本位置
-`/home/neo/upload/Step-Audio-EditX/start_api_container.sh`
+`/your/project/path/start_api_container.sh`
 
 #### 脚本功能
 - ✅ 自动检查并清理旧容器
@@ -129,7 +129,7 @@ GPU 分配：GPU 1
 ### 方式 1：使用启动脚本（推荐）
 
 ```bash
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 ./start_api_container.sh
 ```
 
@@ -141,9 +141,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=1"' \
   -p 8003:8000 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   -e OMP_NUM_THREADS=8 \
@@ -308,10 +308,10 @@ nvidia-smi
 
 ```bash
 # 修改启动脚本使用 GPU 3
-sed -i 's/device=1/device=3/' /home/neo/upload/Step-Audio-EditX/start_api_container.sh
+sed -i 's/device=1/device=3/' /your/project/path/start_api_container.sh
 
 # 启动容器
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 ./start_api_container.sh
 
 # 等待 3 分钟后测试

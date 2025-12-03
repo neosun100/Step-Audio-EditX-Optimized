@@ -159,7 +159,7 @@
 
 ```bash
 # 下载模型
-cd /home/neo/upload/Step-Audio-EditX/models/Step-Audio-Tokenizer
+cd /your/project/path/models/Step-Audio-Tokenizer
 git lfs clone https://huggingface.co/damo/speech_paraformer-base_asr_nat-zh-cn-16k-common-vocab8404
 
 # 修改 tokenizer.py 第 31 行

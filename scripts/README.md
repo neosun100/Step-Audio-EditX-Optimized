@@ -79,7 +79,7 @@ python scripts/quick_optimize.py \
 
 ```bash
 # 进入项目目录
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 
 # 应用优化补丁
 patch -p1 < patches/tokenizer_quick_optimize.patch

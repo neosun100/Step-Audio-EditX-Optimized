@@ -9,7 +9,7 @@ echo "🚀 启动 Step-Audio-EditX 统一服务器 (UI + API 共享模型)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # ⚠️ 配置区域
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"
+PROJECT_DIR="/path/to/Step-Audio-EditX"
 GPU_ID=2
 PORT=7860
 

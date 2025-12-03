@@ -85,7 +85,7 @@ python scripts/quick_optimize.py --test-lightweight
 **使用**：
 
 ```bash
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 patch -p1 < patches/tokenizer_quick_optimize.patch
 ```
 
@@ -178,7 +178,7 @@ patch -p1 < patches/tokenizer_quick_optimize.patch
 
 ```bash
 # 步骤 1: 应用补丁（1 分钟）
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 patch -p1 < patches/tokenizer_quick_optimize.patch
 
 # 步骤 2: 测试效果（5 分钟）
@@ -313,7 +313,7 @@ docker run -d --name step-audio-ui-opt \
 
 ```bash
 # 应用快速优化
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 patch -p1 < patches/tokenizer_quick_optimize.patch
 python scripts/quick_optimize.py --test-lightweight
 

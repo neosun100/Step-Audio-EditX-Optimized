@@ -405,9 +405,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=2"' \
   -p 7860:7860 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   step-audio-editx:latest \
@@ -427,9 +427,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=3"' \
   -p 8003:8000 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   -e OMP_NUM_THREADS=8 \

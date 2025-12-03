@@ -21,14 +21,14 @@ a468623 docs: 添加最佳实践章节
 ### 方法1：直接推送（推荐）
 
 ```bash
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 git push neosun100 main
 ```
 
 ### 方法2：强制推送（如有冲突）
 
 ```bash
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 git push neosun100 main --force
 ```
 

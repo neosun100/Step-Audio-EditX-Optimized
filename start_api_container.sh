@@ -10,7 +10,7 @@ echo "🚀 启动 Step-Audio-EditX API 容器"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # ⚠️ 配置区域 - 请根据实际情况修改
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"  # 项目根目录路径
+PROJECT_DIR="/path/to/Step-Audio-EditX"  # 项目根目录路径
 GPU_ID=3                                          # GPU ID (0, 1, 2, 3...)
 API_PORT=8003                                     # 宿主机端口（容器内固定为 8000）
 

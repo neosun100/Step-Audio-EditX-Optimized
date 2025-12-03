@@ -10,7 +10,7 @@ echo "🚀 启动 Step-Audio-EditX 统一容器 (UI + API + 懒加载)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # ⚠️ 配置区域 - 请根据实际情况修改
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"  # 项目根目录路径
+PROJECT_DIR="/path/to/Step-Audio-EditX"  # 项目根目录路径
 GPU_ID=2                                          # GPU ID (0, 1, 2, 3...)
 PORT=7860                                         # 服务端口（UI和API共用）
 IDLE_TIMEOUT=300                                  # 模型空闲超时（秒），默认300秒（5分钟）

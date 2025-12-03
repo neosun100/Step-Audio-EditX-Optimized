@@ -127,7 +127,7 @@ Clone 8-10s 包含：
 **工作量**：15 分钟
 ```bash
 # 1. 下载模型（5 分钟）
-cd /home/neo/upload/Step-Audio-EditX/models/Step-Audio-Tokenizer
+cd /your/project/path/models/Step-Audio-Tokenizer
 git lfs clone https://huggingface.co/damo/speech_paraformer-base_asr_nat-zh-cn-16k-common-vocab8404
 
 # 2. 修改配置（1 行代码）

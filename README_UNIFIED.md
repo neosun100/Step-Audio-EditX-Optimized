@@ -228,7 +228,7 @@ docker restart step-audio-unified
 **解决**：
 ```bash
 # 检查模型目录
-ls -la /home/neo/upload/Step-Audio-EditX/models/
+ls -la /your/project/path/models/
 
 # 应该看到：
 # Step-Audio-Tokenizer/

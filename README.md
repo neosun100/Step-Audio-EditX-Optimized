@@ -356,7 +356,7 @@ chmod +x start_ui_container.sh
 
 ```bash
 # 设置变量（根据实际情况修改）
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"  # 项目路径
+PROJECT_DIR="/your/project/path"  # 项目路径
 GPU_ID=2                                          # GPU ID
 UI_PORT=7860                                      # 宿主机端口
 
@@ -478,7 +478,7 @@ chmod +x start_api_container.sh
 
 ```bash
 # 设置变量（根据实际情况修改）
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"  # 项目路径
+PROJECT_DIR="/your/project/path"  # 项目路径
 GPU_ID=3                                          # GPU ID
 API_PORT=8003                                     # 宿主机端口
 

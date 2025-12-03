@@ -32,7 +32,7 @@
 
 ```bash
 # 进入项目根目录
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 
 # 应用补丁
 patch -p1 < patches/tokenizer_quick_optimize.patch

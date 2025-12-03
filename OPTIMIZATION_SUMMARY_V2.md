@@ -71,7 +71,7 @@ FastAPI (主应用)
 
 **配置参数**：
 ```bash
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"
+PROJECT_DIR="/your/project/path"
 GPU_ID=2
 PORT=7860
 IDLE_TIMEOUT=300
@@ -338,7 +338,7 @@ docker restart step-audio-unified
 **解决**：
 ```bash
 # 检查模型目录
-ls -la /home/neo/upload/Step-Audio-EditX/models/
+ls -la /your/project/path/models/
 
 # 查看日志
 docker logs step-audio-unified

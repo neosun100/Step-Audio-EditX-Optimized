@@ -142,13 +142,13 @@ GPU 分配：GPU 3 (30GB 可用)
 重启策略：always
 
 代码挂载：
-  /home/neo/upload/Step-Audio-EditX:/app (读写)
+  /your/project/path:/app (读写)
   
 模型挂载：
-  /home/neo/upload/Step-Audio-EditX/models:/app/models:ro (只读)
+  /your/project/path/models:/app/models:ro (只读)
   
 缓存挂载：
-  /home/neo/upload/Step-Audio-EditX/cache:/app/cache (持久化)
+  /your/project/path/cache:/app/cache (持久化)
 
 环境变量：
   CUDA_VISIBLE_DEVICES=0
@@ -170,10 +170,10 @@ GPU 分配：GPU 3 (30GB 可用)
 #### 方式 1：使用脚本（推荐）
 ```bash
 # 修改为使用 GPU 3
-sed -i 's/device=1/device=3/' /home/neo/upload/Step-Audio-EditX/start_api_container.sh
+sed -i 's/device=1/device=3/' /your/project/path/start_api_container.sh
 
 # 启动容器
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 ./start_api_container.sh
 ```
 
@@ -184,9 +184,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=3"' \
   -p 8003:8000 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   -e OMP_NUM_THREADS=8 \
@@ -353,10 +353,10 @@ docker logs step-audio-api-opt 2>&1 | grep -E "Cache (HIT|MISS)|TF32" | tail -10
 
 ```bash
 # 使用 GPU 3
-sed -i 's/device=1/device=3/' /home/neo/upload/Step-Audio-EditX/start_api_container.sh
+sed -i 's/device=1/device=3/' /your/project/path/start_api_container.sh
 
 # 启动
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 ./start_api_container.sh
 
 # 等待 3 分钟后测试

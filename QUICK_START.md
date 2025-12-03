@@ -11,7 +11,7 @@ vim start_unified_container.sh
 修改以下配置：
 
 ```bash
-PROJECT_DIR="/home/neo/upload/Step-Audio-EditX"  # 改成你的项目路径
+PROJECT_DIR="/your/project/path"  # 改成你的项目路径
 GPU_ID=2                                          # 改成你的GPU ID
 PORT=7860                                         # 服务端口（可选）
 IDLE_TIMEOUT=300                                  # 空闲超时（可选）
@@ -216,7 +216,7 @@ curl -X POST http://localhost:7860/api/v1/models/base/unload
 **A**：检查配置：
 ```bash
 # 检查模型目录
-ls -la /home/neo/upload/Step-Audio-EditX/models/
+ls -la /your/project/path/models/
 
 # 查看日志
 docker logs step-audio-unified

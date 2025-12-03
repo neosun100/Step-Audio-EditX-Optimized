@@ -132,9 +132,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=1"' \
   -p 8003:8000 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   -e OMP_NUM_THREADS=8 \
@@ -187,7 +187,7 @@ docker run -d \
    - 状态：需要确认线程数设置
 
 4. **缓存目录挂载？**
-   - 位置：`-v /home/neo/upload/Step-Audio-EditX/cache:/app/cache`
+   - 位置：`-v /your/project/path/cache:/app/cache`
    - 状态：✅ 已在启动命令中添加
 
 ---
@@ -208,20 +208,20 @@ docker inspect step-audio-ui-opt --format '{{.HostConfig.RestartPolicy.Name}}'
 
 ```bash
 # 1. 检查 tokenizer.py 是否有缓存逻辑
-grep -n "Cache HIT\|Cache MISS" /home/neo/upload/Step-Audio-EditX/tokenizer.py
+grep -n "Cache HIT\|Cache MISS" /your/project/path/tokenizer.py
 
 # 2. 检查 api_server.py 是否启用 TF32
-grep -n "allow_tf32\|TF32" /home/neo/upload/Step-Audio-EditX/api_server.py
+grep -n "allow_tf32\|TF32" /your/project/path/api_server.py
 
 # 3. 检查 model_loader.py 优化
-grep -n "allow_tf32\|OMP_NUM_THREADS" /home/neo/upload/Step-Audio-EditX/model_loader.py
+grep -n "allow_tf32\|OMP_NUM_THREADS" /your/project/path/model_loader.py
 ```
 
 ### 第三步：创建 API 容器
 
 ```bash
 # 1. 构建镜像（如果需要）
-cd /home/neo/upload/Step-Audio-EditX
+cd /your/project/path
 # docker build -t step-audio-editx:latest .  # 如果镜像已存在，跳过
 
 # 2. 启动 API 容器
@@ -230,9 +230,9 @@ docker run -d \
   --restart=always \
   --gpus '"device=1"' \
   -p 8003:8000 \
-  -v /home/neo/upload/Step-Audio-EditX:/app \
-  -v /home/neo/upload/Step-Audio-EditX/models:/app/models:ro \
-  -v /home/neo/upload/Step-Audio-EditX/cache:/app/cache \
+  -v /your/project/path:/app \
+  -v /your/project/path/models:/app/models:ro \
+  -v /your/project/path/cache:/app/cache \
   -e CUDA_VISIBLE_DEVICES=0 \
   -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
   -e OMP_NUM_THREADS=8 \
